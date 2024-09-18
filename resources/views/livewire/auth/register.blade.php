@@ -17,7 +17,7 @@
                             <input type="text" class="form-control form-control-xl" placeholder="Email"
                                 id="email" wire:model="email" />
                             @error('email')
-                                <span class="error">{{ $message }}</span>
+                                <span class="text-danger error">{{ $message }}</span>
                             @enderror
                             <div class="form-control-icon">
                                 <i class="bi bi-envelope"></i>
@@ -27,7 +27,7 @@
                             <input type="text" class="form-control form-control-xl" placeholder="Username"
                                 id="name" wire:model="name" />
                             @error('name')
-                                <span class="error">{{ $message }}</span>
+                                <span class="text-danger error">{{ $message }}</span>
                             @enderror
                             <div class="form-control-icon">
                                 <i class="bi bi-person"></i>
@@ -37,7 +37,7 @@
                             <input type="password" class="form-control form-control-xl" placeholder="Password"
                                 id="password" wire:model="password" />
                             @error('password')
-                                <span class="error">{{ $message }}</span>
+                                <span class="text-danger error">{{ $message }}</span>
                             @enderror
                             <div class="form-control-icon">
                                 <i class="bi bi-shield-lock"></i>

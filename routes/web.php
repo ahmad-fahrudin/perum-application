@@ -9,5 +9,5 @@ Route::get('/login', Login::class)->name('login');
 Route::get('/register', Register::class)->name('register');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dahsboard', Dashboard::class)->name('dahsboard');
+    Route::get('/dashboard', Dashboard::class)->name('dashboard');
 });
