@@ -56,13 +56,22 @@
                                 <span>Penghuni</span>
                             </a>
                         </li>
-                        {{-- <li class="sidebar-item {{ Route::is('all.foods') ? 'active' : '' }}">
-                            <a href="{{ route('all.foods') }}" class='sidebar-link'>
-                                <i class="bi bi-image-fill"></i>
-                                <span>Foods</span>
+                        <li class="sidebar-item {{ Route::is('rumah', 'history-penghuni') ? 'active' : '' }}  has-sub">
+                            <a href="#" class="sidebar-link">
+                                <i class="bi bi-map-fill"></i>
+                                <span>Rumah</span>
                             </a>
+                            <ul class="submenu submenu-closed" style="--submenu-height: 86px;">
+                                <li class="submenu-item {{ Route::is('rumah') ? 'active' : '' }}">
+                                    <a href="{{ route('rumah') }}" class="submenu-link">Data Rumah</a>
+                                </li>
+                                <li class="submenu-item {{ Route::is('history-penghuni') ? 'active' : '' }}">
+                                    <a href="{{ route('history-penghuni') }}" class="submenu-link">Penghuni
+                                        Rumah</a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="sidebar-item {{ Route::is('order') ? 'active' : '' }}">
+                        {{-- <li class="sidebar-item {{ Route::is('order') ? 'active' : '' }}">
                             <a href="{{ route('order') }}" class='sidebar-link'>
                                 <i class="bi bi-basket-fill"></i>
                                 <span>Orderan</span>

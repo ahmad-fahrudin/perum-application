@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('rumahs', function (Blueprint $table) {
             $table->id();
-            $table->string('nomor_rumah', 10);
-            $table->enum('status_rumah', ['Dihuni', 'Tidak Dihuni']);
+            $table->string('nama', 20);
+            $table->enum('status', ['Dihuni', 'Tidak Dihuni']);
             $table->timestamps();
         });
     }
