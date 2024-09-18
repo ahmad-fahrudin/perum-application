@@ -46,8 +46,10 @@
                                     <td>{{ $item->status_iuran_bulanan }}</td>
                                     <td>{{ $item->tanggal_masuk }}</td>
                                     <td>
-                                        <a wire:click="edit({{ $item->id }})" class="btn btn-warning text-center"><i
-                                                class="bi bi-pencil-square"></i></a>
+                                        <a wire:click="show_edit_form({{ $item->id }})"
+                                            class="btn btn-warning text-center">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </a>
                                         <a wire:click="delete({{ $item->id }})"
                                             onclick="return confirm('Anda yakin Menghapus data?')"
                                             class="btn
