@@ -50,13 +50,13 @@
                                 <span>Dashboard</span>
                             </a>
                         </li>
-                        {{-- <li class="sidebar-item {{ Route::is('all.category') ? 'active' : '' }}">
-                            <a href="{{ route('all.category') }}" class='sidebar-link'>
+                        <li class="sidebar-item {{ Route::is('penghuni') ? 'active' : '' }}">
+                            <a href="{{ route('penghuni') }}" class='sidebar-link'>
                                 <i class="bi bi-grid-1x2-fill"></i>
-                                <span>Category</span>
+                                <span>Penghuni</span>
                             </a>
                         </li>
-                        <li class="sidebar-item {{ Route::is('all.foods') ? 'active' : '' }}">
+                        {{-- <li class="sidebar-item {{ Route::is('all.foods') ? 'active' : '' }}">
                             <a href="{{ route('all.foods') }}" class='sidebar-link'>
                                 <i class="bi bi-image-fill"></i>
                                 <span>Foods</span>

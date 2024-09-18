@@ -15,18 +15,8 @@ return new class extends Migration
     {
         Schema::create('rumahs', function (Blueprint $table) {
             $table->id();
-
             $table->string('nomor_rumah', 10);
             $table->enum('status_rumah', ['Dihuni', 'Tidak Dihuni']);
-            $table->timestamps();
-        });
-
-        Schema::create('history_penghuni', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(Rumah::class)->constrained()->cascadeOnUpdate();
-            $table->foreignIdFor(Penghuni::class)->constrained()->cascadeOnUpdate();
-            $table->date('tanggal_masuk');
-            $table->date('tanggal_keluar')->nullable();
             $table->timestamps();
         });
     }
@@ -37,6 +27,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('rumahs');
-        Schema::dropIfExists('history_penghuni');
     }
 };

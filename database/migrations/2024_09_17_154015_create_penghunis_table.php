@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('foto_ktp')->nullable();
             $table->string('nomor_telepon', 20);
             $table->enum('status_kontrak', ['Kontrak', 'Tetap']);
+            $table->enum('status_menikah', ['Menikah', 'Bekum Menikah']);
             $table->date('tanggal_masuk');
             $table->enum('status_iuran_bulanan', ['Aktif', 'Tidak Aktif']);
             $table->timestamps();
