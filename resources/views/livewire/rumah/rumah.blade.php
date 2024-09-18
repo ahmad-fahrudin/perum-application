@@ -15,6 +15,17 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
+            @if (session()->has('penghuni'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <h4>Penghuni Rumah:</h4>
+                    <ul>
+                        @foreach (session('penghuni') as $p)
+                            <li>{{ $p->nama }} - {{ $p->alamat }}</li>
+                        @endforeach
+                    </ul>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="card-header">
                 <a wire:click="show_create_form" class="btn btn-primary">Tambah Baru</a>
             </div>
@@ -34,7 +45,17 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->nama }}</td>
-                                    <td>{{ $item->status }}</td>
+                                    <td>
+                                        <a wire:click="showPenghuniByRumah({{ $item->id }})"
+                                            class="btn {{ App\Models\Penghuni::where('rumah_id', $item->id)->exists() ? 'btn-success' : 'btn-light' }} text-center">
+                                            @if (App\Models\Penghuni::where('rumah_id', $item->id)->exists())
+                                                Dihuni
+                                            @else
+                                                Tidak dihuni
+                                            @endif
+                                        </a>
+
+                                    </td>
                                     <td>
                                         <a wire:click="show_edit_form({{ $item->id }})"
                                             class="btn btn-warning text-center">

@@ -4,10 +4,10 @@ namespace App\Livewire\Rumah;
 
 use Livewire\Component;
 
-class HistoryPenghuni extends Component
+class EditRumah extends Component
 {
     public function render()
     {
-        return view('livewire.rumah.history-penghuni');
+        return view('livewire.rumah.edit-rumah');
     }
 }

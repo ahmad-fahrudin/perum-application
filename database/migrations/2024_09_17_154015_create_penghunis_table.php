@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\Rumah;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -13,14 +14,13 @@ return new class extends Migration
     {
         Schema::create('penghunis', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_lengkap');
+            $table->string('nama');
             $table->string('alamat')->nullable();
             $table->string('foto_ktp')->nullable();
-            $table->string('nomor_telepon', 20);
+            $table->string('telepon', 20);
             $table->enum('status_kontrak', ['Kontrak', 'Tetap']);
             $table->enum('status_menikah', ['Menikah', 'Bekum Menikah']);
             $table->date('tanggal_masuk');
-            $table->enum('status_iuran_bulanan', ['Aktif', 'Tidak Aktif']);
             $table->timestamps();
         });
     }

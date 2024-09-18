@@ -13,10 +13,10 @@
                         <!-- Nama Lengkap -->
                         <div class="col-md-8">
                             <div class="form-group">
-                                <label for="nama_lengkap">Nama Lengkap</label>
-                                <input type="text" id="nama_lengkap" class="form-control"
-                                    wire:model.lazy="nama_lengkap" placeholder="Masukkan nama lengkap">
-                                @error('nama_lengkap')
+                                <label for="nama">Nama Lengkap</label>
+                                <input type="text" id="nama" class="form-control" wire:model.lazy="nama"
+                                    placeholder="Masukkan nama lengkap">
+                                @error('nama')
                                     <span class="text-red-500 text-danger text-xs">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -50,7 +50,7 @@
 
                     <div class="row">
                         <!-- Status Menikah -->
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="status_menikah">Status Menikah</label>
                                 <select id="status_menikah" wire:model.lazy="status_menikah" class="form-control">
@@ -72,6 +72,23 @@
                                     class="form-control">
                                 @error('tanggal_masuk')
                                     <span class="text-red-500 text-danger text-xs">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <!-- Rumah -->
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="rumah_id">Rumah</label>
+                                <select id="rumah_id" wire:model.lazy="rumah_id" class="form-control">
+                                    <option selected>-----Pilih Rumah-----</option>
+                                    @foreach ($rumahList as $rumah)
+                                        <option value="{{ $rumah->id }}">{{ $rumah->nama }}</option>
+                                    @endforeach
+                                </select>
+                                @error('rumah_id')
+                                    <span class="text-red-500 text-danger text-xs">Maaf, rumah sudah ada yang
+                                        menempati</span>
                                 @enderror
                             </div>
                         </div>
@@ -110,23 +127,10 @@
 
                     <!-- Nomor Telepon -->
                     <div class="form-group">
-                        <label for="nomor_telepon">Nomor Telepon</label>
-                        <input type="text" id="nomor_telepon" wire:model.lazy="nomor_telepon" class="form-control"
+                        <label for="telepon">Nomor Telepon</label>
+                        <input type="text" id="telepon" wire:model.lazy="telepon" class="form-control"
                             placeholder="Masukkan nomor telepon">
-                        @error('nomor_telepon')
-                            <span class="text-red-500 text-danger text-xs">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-                    <!-- Status Iuran Bulanan -->
-                    <div class="form-group">
-                        <label for="status_iuran_bulanan">Status Iuran Bulanan</label>
-                        <select id="status_iuran_bulanan" wire:model.lazy="status_iuran_bulanan" class="form-control">
-                            <option selected>-----Pilih Status Iuran Bulanan-----</option>
-                            <option value="Aktif">Aktif</option>
-                            <option value="Tidak Aktif">Tidak Aktif</option>
-                        </select>
-                        @error('status_iuran_bulanan')
+                        @error('telepon')
                             <span class="text-red-500 text-danger text-xs">{{ $message }}</span>
                         @enderror
                     </div>

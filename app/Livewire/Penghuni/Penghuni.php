@@ -5,6 +5,7 @@ namespace App\Livewire\Penghuni;
 use Livewire\Component;
 use Illuminate\Support\Facades\File;
 use App\Models\Penghuni as ModelsPenghuni;
+use App\Models\Rumah;
 use Intervention\Image\Laravel\Facades\Image;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
 
@@ -12,14 +13,16 @@ class Penghuni extends Component
 {
     use WithFileUploads;
 
-    public $nama_lengkap, $alamat, $foto_ktp, $nomor_telepon, $status_kontrak, $status_menikah, $tanggal_masuk, $status_iuran_bulanan;
+    public $rumah_id, $nama, $alamat, $foto_ktp, $telepon, $status_kontrak, $status_menikah, $tanggal_masuk;
     public $_page;
     public $penghuni_id;
     public $old_foto_ktp;
+    public $rumahList = [];
 
     public function mount()
     {
         $this->_page = 'index';
+        $this->rumahList = Rumah::all();
     }
 
     public function show_index()
@@ -31,48 +34,52 @@ class Penghuni extends Component
     {
         $this->resetForm();
         $this->_page = "create";
+        $this->rumahList = Rumah::all();
     }
 
     public function show_edit_form($id)
     {
+        // Find the Penghuni record
         $penghuni = ModelsPenghuni::findOrFail($id);
-        // Set data penghuni ke form
+
+        // Set the form data with the current Penghuni data
         $this->penghuni_id = $id;
-        $this->nama_lengkap = $penghuni->nama_lengkap;
+        $this->rumah_id = $penghuni->rumah_id;
+        $this->nama = $penghuni->nama;
         $this->alamat = $penghuni->alamat;
-        $this->nomor_telepon = $penghuni->nomor_telepon;
+        $this->telepon = $penghuni->telepon;
         $this->status_kontrak = $penghuni->status_kontrak;
         $this->status_menikah = $penghuni->status_menikah;
         $this->tanggal_masuk = $penghuni->tanggal_masuk;
-        $this->status_iuran_bulanan = $penghuni->status_iuran_bulanan;
         $this->old_foto_ktp = $penghuni->foto_ktp;
 
-        // Ganti halaman ke edit
+        // Change the page state to "edit"
         $this->_page = "edit";
     }
 
 
+
     public function resetForm()
     {
-        $this->reset(['nama_lengkap', 'alamat', 'foto_ktp', 'nomor_telepon', 'status_kontrak', 'status_menikah', 'tanggal_masuk', 'status_iuran_bulanan', 'penghuni_id', 'old_foto_ktp']);
+        $this->reset(['nama', 'alamat', 'foto_ktp', 'telepon', 'status_kontrak', 'status_menikah', 'tanggal_masuk', 'penghuni_id', 'old_foto_ktp']);
     }
 
     public function createPenghuni()
     {
         $this->validate([
-            'nama_lengkap' => 'required|string|max:255',
+            'rumah_id' => 'required|exists:rumahs,id|unique:penghunis,rumah_id',
+            'nama' => 'required|string|max:255',
             'alamat' => 'nullable|string|max:255',
             'foto_ktp' => 'nullable|image|max:255',
-            'nomor_telepon' => 'required|string|max:20',
+            'telepon' => 'required|string|max:20',
             'status_kontrak' => 'required|in:Kontrak,Tetap',
             'status_menikah' => 'required|in:Menikah,Belum Menikah',
             'tanggal_masuk' => 'required|date',
-            'status_iuran_bulanan' => 'required|in:Aktif,Tidak Aktif',
         ]);
 
         if ($this->foto_ktp) {
             // Resize gambar menggunakan Intervention Image
-            $image = Image::make($this->foto_ktp->getRealPath());
+            $image = Image::read($this->foto_ktp->getRealPath());
             $image->resize(300, 300, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
@@ -85,14 +92,14 @@ class Penghuni extends Component
         }
 
         ModelsPenghuni::create([
-            'nama_lengkap' => $this->nama_lengkap,
+            'rumah_id' => $this->rumah_id,
+            'nama' => $this->nama,
             'alamat' => $this->alamat,
             'foto_ktp' => $imagePath ?? null,
-            'nomor_telepon' => $this->nomor_telepon,
+            'telepon' => $this->telepon,
             'status_kontrak' => $this->status_kontrak,
             'status_menikah' => $this->status_menikah,
             'tanggal_masuk' => $this->tanggal_masuk,
-            'status_iuran_bulanan' => $this->status_iuran_bulanan,
         ]);
 
         $this->resetForm();
@@ -102,14 +109,14 @@ class Penghuni extends Component
     public function editPenghuni()
     {
         $this->validate([
-            'nama_lengkap' => 'required|string|max:255',
+            'rumah_id' => 'required|exists:rumahs,id|unique:penghunis,rumah_id,' . $this->penghuni_id,
+            'nama' => 'required|string|max:255',
             'alamat' => 'nullable|string|max:255',
             'foto_ktp' => 'nullable|image|max:255',
-            'nomor_telepon' => 'required|string|max:20',
+            'telepon' => 'required|string|max:20',
             'status_kontrak' => 'required|in:Kontrak,Tetap',
             'status_menikah' => 'required|in:Menikah,Belum Menikah',
             'tanggal_masuk' => 'required|date',
-            'status_iuran_bulanan' => 'required|in:Aktif,Tidak Aktif',
         ]);
 
         $penghuni = ModelsPenghuni::findOrFail($this->penghuni_id);
@@ -134,14 +141,14 @@ class Penghuni extends Component
         }
 
         $penghuni->update([
-            'nama_lengkap' => $this->nama_lengkap,
+            'rumah_id' => $this->rumah_id,
+            'nama' => $this->nama,
             'alamat' => $this->alamat,
             'foto_ktp' => $imagePath ?? $this->old_foto_ktp,
-            'nomor_telepon' => $this->nomor_telepon,
+            'telepon' => $this->telepon,
             'status_kontrak' => $this->status_kontrak,
             'status_menikah' => $this->status_menikah,
             'tanggal_masuk' => $this->tanggal_masuk,
-            'status_iuran_bulanan' => $this->status_iuran_bulanan,
         ]);
 
         $this->resetForm();

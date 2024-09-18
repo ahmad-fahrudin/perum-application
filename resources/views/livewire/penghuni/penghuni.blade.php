@@ -26,9 +26,9 @@
                                 <th>No.</th>
                                 <th>Nama</th>
                                 <th>Foto KTP</th>
+                                <th>Rumah</th>
                                 <th>Status Kontrak</th>
                                 <th>Telepon</th>
-                                <th>Status Iuran</th>
                                 <th>Tanggal Masuk</th>
                                 <th>Opsi</th>
                             </tr>
@@ -37,13 +37,13 @@
                             @foreach ($penghuni as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->nama_lengkap }}</td>
+                                    <td>{{ $item->nama }}</td>
                                     <td><img src="{{ asset($item->foto_ktp) }}" alt=""
                                             style="width: 75px; height:50px;">
                                     </td>
+                                    <td>{{ $item->rumah->nama }}</td>
                                     <td>{{ $item->status_kontrak }}</td>
-                                    <td>{{ $item->nomor_telepon }}</td>
-                                    <td>{{ $item->status_iuran_bulanan }}</td>
+                                    <td>{{ $item->telepon }}</td>
                                     <td>{{ $item->tanggal_masuk }}</td>
                                     <td>
                                         <a wire:click="show_edit_form({{ $item->id }})"

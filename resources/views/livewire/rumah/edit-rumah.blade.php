@@ -1,6 +1,6 @@
 <div>
     <div class="page-heading">
-        <h3>Create Rumah</h3>
+        <h3>Edit Rumah</h3>
     </div>
     <section class="section">
         <div class="card">
@@ -8,9 +8,9 @@
                 <a wire:click="show_index" class="btn btn-secondary">Kembali</a>
             </div>
             <div class="card-body">
-                <form wire:submit.prevent="createRumah">
+                <form wire:submit.prevent="editRumah">
                     <div class="row">
-                        <!-- Nomor Rumah -->
+                        <!-- Nama Rumah -->
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="nama">Nama Rumah</label>
@@ -26,7 +26,7 @@
                     <!-- Tombol Simpan -->
                     <div class="flex">
                         <a wire:click="show_index" class="btn btn-danger">Batal</a>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                     </div>
                 </form>
             </div>
