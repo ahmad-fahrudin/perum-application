@@ -1,4 +1,4 @@
-<p align="center">Dibuat Menggunakan Framework Laravel Versi 11 dan Php versi 8.2.</p>
+# <p align="center">Dibuat Menggunakan Framework Laravel Versi 11 dan Php versi 8.2.</p>
 
 # ERD (Entity Relationship Diagram)
 ![Screenshot 2024-09-19 200406](https://github.com/user-attachments/assets/4b706c66-046f-447f-8ce5-38c1640a6bde)
