@@ -63,7 +63,8 @@
                                 <span>Rumah</span>
                             </a>
                         </li>
-                        <li class="sidebar-item {{ Route::is('iuran', 'pembayaran') ? 'active' : '' }}  has-sub">
+                        <li
+                            class="sidebar-item {{ Route::is('iuran', 'pembayaran', 'pendapatan', 'pengeluaran') ? 'active' : '' }}  has-sub">
                             <a href="#" class="sidebar-link">
                                 <i class="bi bi-map-fill"></i>
                                 <span>Keuangan</span>
@@ -75,18 +76,18 @@
                                 <li class="submenu-item {{ Route::is('pembayaran') ? 'active' : '' }}">
                                     <a href="{{ route('pembayaran') }}" class="submenu-link">Pembayaran</a>
                                 </li>
+                                <li class="submenu-item {{ Route::is('pendapatan') ? 'active' : '' }}">
+                                    <a href="{{ route('pendapatan') }}" class="submenu-link">Pendapatan</a>
+                                </li>
+                                <li class="submenu-item {{ Route::is('pengeluaran') ? 'active' : '' }}">
+                                    <a href="{{ route('pengeluaran') }}" class="submenu-link">Pengeluaran</a>
+                                </li>
                             </ul>
                         </li>
-                        <li class="sidebar-item {{ Route::is('pendapatan') ? 'active' : '' }}">
-                            <a href="{{ route('pendapatan') }}" class='sidebar-link'>
+                        <li class="sidebar-item {{ Route::is('data.user') ? 'active' : '' }}">
+                            <a href="{{ route('data.user') }}" class='sidebar-link'>
                                 <i class="bi bi-grid-1x2-fill"></i>
-                                <span>Pendapatan</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item {{ Route::is('pengeluaran') ? 'active' : '' }}">
-                            <a href="{{ route('pengeluaran') }}" class='sidebar-link'>
-                                <i class="bi bi-grid-1x2-fill"></i>
-                                <span>Pengeluaran</span>
+                                <span>Data User</span>
                             </a>
                         </li>
                         <button wire:click="logout" class="btn btn-danger ms-3 px-5 mt-2"

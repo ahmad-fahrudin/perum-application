@@ -5,6 +5,7 @@ use App\Livewire\Auth\Login;
 use App\Livewire\Pendapatan\Pendapatan;
 use App\Livewire\Rumah\Rumah;
 use App\Livewire\Auth\Register;
+use App\Livewire\DataUser\Data;
 use App\Livewire\Penghuni\Penghuni;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Keuangan\Iuran\Iuran;
@@ -22,4 +23,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/pembayaran', Pembayaran::class)->name('pembayaran');
     Route::get('/pendapatan', Pendapatan::class)->name('pendapatan');
     Route::get('/pengeluaran', Pengeluaran::class)->name('pengeluaran');
+
+    Route::get('/data-user', Data::class)->name('data.user');
 });
