@@ -9,8 +9,8 @@
 1. **Clone Repository**
 
 ```bash
-git clone https://github.com/ahmad-fahrudin/perums-application.git
-cd perums-application
+git clone https://github.com/ahmad-fahrudin/perum-application.git
+cd perum-application
 composer install
 cp .env.example .env
 ```
@@ -38,6 +38,10 @@ php artisan migrate --seed
 php artisan serve
 
 ```
+## Akun Default
+
+-   email: admin@gmail.com
+-   Password: password123
 
 ## Preview
 
