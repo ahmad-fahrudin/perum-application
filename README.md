@@ -4,8 +4,7 @@
 
 
 ## Panduan Install
-### Jangan lupa run XAMPP atau Laragonnya
-## Lanjut
+### Jangan lupa run XAMPP atau Laragonnya, Lanjut :
 1. **Clone Repository**
 
 ```bash
