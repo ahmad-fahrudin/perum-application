@@ -44,17 +44,24 @@ php artisan serve
 -   Password: password123
 
 ## Preview
+1. **Fitur Dashboard**
+![Screenshot 2024-09-19 214633](https://github.com/user-attachments/assets/63b4fbab-c549-4f9b-8d79-6eecd491c103)
 
-![Screenshot 2024-08-27 060445](https://github.com/user-attachments/assets/1b611fb9-eec4-42ff-a951-08af7b94d7ec)
+2. **Fitur Majanemen Penghuni**
+![Screenshot 2024-09-19 214736](https://github.com/user-attachments/assets/591d092c-60e7-49e5-b03b-18fe25547008)
 
-![Screenshot 2024-08-27 060515](https://github.com/user-attachments/assets/e06cec9f-1c97-47f9-8fc3-4837c3e3caff)
+3. **Fitur Majanemen Rumah**
+![Screenshot 2024-09-19 214750](https://github.com/user-attachments/assets/6f134acc-453b-4eb5-9c1c-06c406859d7c)
 
-![Screenshot 2024-08-27 060535](https://github.com/user-attachments/assets/2783e174-701d-4c48-a33c-14ab0749e7db)
+4. **Fitur Majanemen Keuangan Pembayaran**
+![Screenshot 2024-09-19 214836](https://github.com/user-attachments/assets/99388a1a-93d7-4d26-88cc-37d535897b7c)
 
-![Screenshot 2024-08-27 060546](https://github.com/user-attachments/assets/4b5429c3-6b97-4db1-88b1-f29a195c531d)
+5. **Fitur Majanemen Keuangan Pengeluaran**
+![Screenshot 2024-09-19 214944](https://github.com/user-attachments/assets/57b9d830-e48b-417b-a2b2-d05fec328131)
 
-![Screenshot 2024-08-27 060631](https://github.com/user-attachments/assets/c0a44b41-b706-4a7e-ac8c-517b742f90ed)
+6. **Fitur Ringkasan**
+![Screenshot 2024-09-19 215045](https://github.com/user-attachments/assets/3ce7d069-8a96-4c25-b42d-224d2ad68dff)
 
-![Screenshot 2024-08-27 060654](https://github.com/user-attachments/assets/53541440-1631-4f02-9500-dea7a8f48452)
+7. **Fitur Data user**
+![Screenshot 2024-09-19 215104](https://github.com/user-attachments/assets/cda4339a-cc48-434b-a397-09efc2689c1e)
 
-![Screenshot 2024-08-27 060907](https://github.com/user-attachments/assets/0b40ea6a-907c-49a8-9a06-99406d5cc648)
