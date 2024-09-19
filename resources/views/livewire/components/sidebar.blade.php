@@ -3,7 +3,8 @@
                 <div class="sidebar-header position-relative">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="logo">
-                            <h3 class="text-center text-primary m-0">Restoran</h3>
+                            <h3 class="text-center text-primary m-0">Perums</h3>
+                            <h3 class="text-center text-primary m-0">Indah</h3>
                         </div>
                         <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -76,18 +77,18 @@
                                 </li>
                             </ul>
                         </li>
-                        {{-- <li class="sidebar-item {{ Route::is('order') ? 'active' : '' }}">
-                            <a href="{{ route('order') }}" class='sidebar-link'>
-                                <i class="bi bi-basket-fill"></i>
-                                <span>Orderan</span>
+                        <li class="sidebar-item {{ Route::is('pendapatan') ? 'active' : '' }}">
+                            <a href="{{ route('pendapatan') }}" class='sidebar-link'>
+                                <i class="bi bi-grid-1x2-fill"></i>
+                                <span>Pendapatan</span>
                             </a>
                         </li>
-                        <li class="sidebar-item {{ Route::is('booking') ? 'active' : '' }}">
-                            <a href="{{ route('booking') }}" class='sidebar-link'>
-                                <i class="bi bi-stack"></i>
-                                <span>Booking</span>
+                        <li class="sidebar-item {{ Route::is('pengeluaran') ? 'active' : '' }}">
+                            <a href="{{ route('pengeluaran') }}" class='sidebar-link'>
+                                <i class="bi bi-grid-1x2-fill"></i>
+                                <span>Pengeluaran</span>
                             </a>
-                        </li> --}}
+                        </li>
                         <button wire:click="logout" class="btn btn-danger ms-3 px-5 mt-2"
                             onclick="return confirm('Anda yakin keluar dari aplikasi?')">
                             Logout

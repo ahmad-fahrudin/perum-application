@@ -1,6 +1,6 @@
 <div>
     <div class="page-heading">
-        <h3>Semua Penghuni</h3>
+        <h3>Data Penghuni</h3>
     </div>
     <section class="section">
         <div class="card">

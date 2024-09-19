@@ -4,6 +4,7 @@ namespace App\Livewire\Rumah;
 
 use Livewire\Component;
 use App\Models\Penghuni;
+use App\Models\Pembayaran;
 use App\Models\Rumah as ModelsRumah;
 
 class Rumah extends Component
@@ -89,6 +90,16 @@ class Rumah extends Component
             session()->flash('message', 'Tidak ada penghuni di rumah ini.');
         } else {
             session()->flash('penghuni', $penghuni);
+        }
+    }
+    public function showPembayaranByRumah($rumah_id)
+    {
+        $pembayaran = Pembayaran::where('rumah_id', $rumah_id)->get();
+
+        if ($pembayaran->isEmpty()) {
+            session()->flash('message', 'Rumah ini belum melakukan pembayaran.');
+        } else {
+            session()->flash('pembayaran', $pembayaran);
         }
     }
 

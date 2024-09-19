@@ -1,6 +1,6 @@
 <div>
     <div class="page-heading">
-        <h3>Semua Rumah</h3>
+        <h3>Data Rumah</h3>
     </div>
     <section class="section">
         <div class="card">
@@ -26,6 +26,17 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
+            @if (session()->has('pembayaran'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <h4>Pembayaran:</h4>
+                    <ul>
+                        @foreach (session('pembayaran') as $pembayaran)
+                            <li>{{ $pembayaran->iuran->jenis_iuran }} - {{ $pembayaran->tanggal_pembayaran }}</li>
+                        @endforeach
+                    </ul>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="card-header">
                 <a wire:click="show_create_form" class="btn btn-primary">Tambah Baru</a>
             </div>
@@ -36,7 +47,8 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama</th>
-                                <th>Status</th>
+                                <th>Status Huni</th>
+                                <th>Status Bayar</th>
                                 <th>Opsi</th>
                             </tr>
                         </thead>
@@ -54,8 +66,18 @@
                                                 Tidak dihuni
                                             @endif
                                         </a>
-
                                     </td>
+                                    <td>
+                                        <a wire:click="showPembayaranByRumah({{ $item->id }})"
+                                            class="btn btn-light text-center">
+                                            @if (\App\Models\Pembayaran::where('rumah_id', $item->id)->exists())
+                                                Lihat
+                                            @else
+                                                Lihat
+                                            @endif
+                                        </a>
+                                    </td>
+
                                     <td>
                                         <a wire:click="show_edit_form({{ $item->id }})"
                                             class="btn btn-warning text-center">

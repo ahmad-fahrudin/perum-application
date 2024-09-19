@@ -1,6 +1,6 @@
 <div>
     <div class="page-heading">
-        <h3>Semua Penghuni</h3>
+        <h3>Data Pembayaran</h3>
     </div>
     <section class="section">
         <div class="card">
@@ -24,27 +24,23 @@
                         <thead>
                             <tr>
                                 <th>No.</th>
-                                <th>Nama</th>
-                                <th>Foto KTP</th>
                                 <th>Rumah</th>
-                                <th>Status Kontrak</th>
-                                <th>Telepon</th>
-                                <th>Tanggal Masuk</th>
+                                <th>Iuran</th>
+                                <th>Tanggal</th>
+                                <th>Jumlah</th>
+                                <th>Jenis</th>
                                 <th>Opsi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($penghuni as $item)
+                            @foreach ($pembayaran as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->nama }}</td>
-                                    <td><img src="{{ asset($item->foto_ktp) }}" alt=""
-                                            style="width: 75px; height:50px;">
-                                    </td>
                                     <td>{{ $item->rumah->nama }}</td>
-                                    <td>{{ $item->status_kontrak }}</td>
-                                    <td>{{ $item->telepon }}</td>
-                                    <td>{{ $item->tanggal_masuk }}</td>
+                                    <td>{{ $item->iuran->jenis_iuran }}</td>
+                                    <td>{{ $item->tanggal_pembayaran }}</td>
+                                    <td>{{ 'Rp. ' . number_format($item->jumlah_pembayaran, 0, '.', '.') }}</td>
+                                    <td>{{ $item->jenis_pembayaran }}</td>
                                     <td>
                                         <a wire:click="delete({{ $item->id }})"
                                             onclick="return confirm('Anda yakin Menghapus data?')"
