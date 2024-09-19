@@ -1,6 +1,6 @@
 # <p align="center">Dibuat Menggunakan Framework Laravel Versi 11 dan Php versi 8.2.</p>
 
-## ERD (Entity Relationship Diagram) paling bawah 👇 👇 👇
+### <p align="center">ERD (Entity Relationship Diagram) paling bawah 👇 👇 👇</p>
 
 
 ## Panduan Install
