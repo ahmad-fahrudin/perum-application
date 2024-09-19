@@ -39,7 +39,7 @@ class Rumah extends Component
 
     public function resetForm()
     {
-        $this->reset(['nama', 'status', 'rumah_id']);
+        $this->reset(['nama', 'rumah_id']);
     }
 
     public function createRumah()

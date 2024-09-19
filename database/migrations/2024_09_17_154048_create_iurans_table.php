@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('iurans', function (Blueprint $table) {
             $table->id();
-            $table->enum('jenis_iuran', ['Satpam', 'Kebersihan']);
-            $table->decimal('jumlah', 10, 2);
-            $table->date('tanggal_jatuh_tempo');
+            $table->string('jenis_iuran');
+            $table->integer('nominal');
             $table->timestamps();
         });
     }

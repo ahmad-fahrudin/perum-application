@@ -128,7 +128,7 @@ class Penghuni extends Component
             }
 
             // Resize gambar menggunakan Intervention Image
-            $image = Image::make($this->foto_ktp->getRealPath());
+            $image = Image::read($this->foto_ktp->getRealPath());
             $image->resize(300, 300, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();

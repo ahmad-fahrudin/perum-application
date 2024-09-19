@@ -62,20 +62,17 @@
                                 <span>Rumah</span>
                             </a>
                         </li>
-                        <li class="sidebar-item {{ Route::is('rumah', 'penghuni-rumah') ? 'active' : '' }}  has-sub">
+                        <li class="sidebar-item {{ Route::is('iuran', 'pembayaran') ? 'active' : '' }}  has-sub">
                             <a href="#" class="sidebar-link">
                                 <i class="bi bi-map-fill"></i>
                                 <span>Keuangan</span>
                             </a>
                             <ul class="submenu submenu-closed" style="--submenu-height: 86px;">
-                                <li class="submenu-item {{ Route::is('rumah') ? 'active' : '' }}">
-                                    <a href="{{ route('rumah') }}" class="submenu-link">Iuran</a>
+                                <li class="submenu-item {{ Route::is('iuran') ? 'active' : '' }}">
+                                    <a href="{{ route('iuran') }}" class="submenu-link">Iuran</a>
                                 </li>
-                                <li class="submenu-item {{ Route::is('rumah') ? 'active' : '' }}">
-                                    <a href="{{ route('rumah') }}" class="submenu-link">Pembayaran</a>
-                                </li>
-                                <li class="submenu-item {{ Route::is('rumah') ? 'active' : '' }}">
-                                    <a href="{{ route('rumah') }}" class="submenu-link">Pengeluaran</a>
+                                <li class="submenu-item {{ Route::is('pembayaran') ? 'active' : '' }}">
+                                    <a href="{{ route('pembayaran') }}" class="submenu-link">Pembayaran</a>
                                 </li>
                             </ul>
                         </li>
