@@ -1,34 +1,16 @@
-<p align="center">Dibuat Menggunakan Framework Laravel Versi 10 dan Php versi 8.1.</p>
+<p align="center">Dibuat Menggunakan Framework Laravel Versi 11 dan Php versi 8.2.</p>
 
-## Fitur apa saja yang tersedia di Aplikasi E-Commerce Laravel ini?
+# ERD (Entity Relationship Diagram)
+![Screenshot 2024-09-19 200406](https://github.com/user-attachments/assets/4b706c66-046f-447f-8ce5-38c1640a6bde)
 
--   ADMIN PANEL
--   TERINTEGRASI DENGAN PAYMENT GATEWAY MIDTRANS
--   ORDER LEBIH DARI SATU PRODUK
--   KERANJANG BELANJA
--   Dan lain-lain.
-
-## Akun Default
-
-**http://localhost/login**
-
--   email: user@gmail.com
--   Password: 111
-
-**http://localhost/admin/login**
-
--   email: admin@gmail.com
--   Password: 111
-
----
-
-## Install
-
+## Panduan Install
+### Jangan lupa run XAMPP atau Laragonnya
+## Lanjut
 1. **Clone Repository**
 
 ```bash
-git clone https://github.com/ahmad-fahrudin/e-commerce-tes.git
-cd e-commerce-tes
+git clone https://github.com/ahmad-fahrudin/perums-application.git
+cd perums-application
 composer install
 cp .env.example .env
 ```
@@ -42,23 +24,15 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-3. **Buka `.env` lalu ubah baris berikut sesuai dengan api midtrans kamu**
 
-```bash
-MIDTRANS_IS_PRODUCTION=false
-MIDTRANS_MERCHAT_ID=xxxxxx
-MIDTRANS_CLIENT_KEY=SB-Mid-client-xxxxx
-MIDTRANS_SERVER_KEY=SB-Mid-server-xxxxx
-```
-
-4. **Instalasi Aplikasi**
+3. **Instalasi Aplikasi**
 
 ```bash
 php artisan key:generate
-php artisan migrate atau ('ada database saya di folder sql')
+php artisan migrate --seed
 ```
 
-5. **Jalankan Aplikasi**
+4. **Jalankan Aplikasi**
 
 ```bash
 php artisan serve
