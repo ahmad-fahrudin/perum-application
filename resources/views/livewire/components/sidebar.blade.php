@@ -72,7 +72,7 @@
                             </ul>
                         </li>
                         <li
-                            class="sidebar-item {{ Route::is('iuran', 'pembayaran', 'pendapatan', 'pengeluaran') ? 'active' : '' }}  has-sub">
+                            class="sidebar-item {{ Route::is('pembayaran', 'pendapatan', 'pengeluaran') ? 'active' : '' }}  has-sub">
                             <a href="#" class="sidebar-link">
                                 <i class="bi bi-bank"></i>
                                 <span>Keuangan</span>

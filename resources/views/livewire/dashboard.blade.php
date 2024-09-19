@@ -3,7 +3,7 @@
         <div class="page-heading">
             <h3>Dashboard</h3>
         </div>
-        {{-- <div class="page-content">
+        <div class="page-content">
             <section class="row">
                 <div class="col-12 col-lg-9">
                     <div class="row">
@@ -14,12 +14,12 @@
                                         <div
                                             class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                                             <div class="stats-icon red mb-2">
-                                                <i class="iconly-boldBookmark"></i>
+                                                <i class="bi bi-people-fill"></i>
                                             </div>
                                         </div>
                                         <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                            <h6 class="text-muted font-semibold">Foods</h6>
-                                            <h6 class="font-extrabold mb-0">{{ $foodsCount }}</h6>
+                                            <h6 class="text-muted font-semibold">Penghuni</h6>
+                                            <h6 class="font-extrabold mb-0">{{ $penghuniCount }}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -32,12 +32,12 @@
                                         <div
                                             class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                                             <div class="stats-icon purple mb-2">
-                                                <i class="iconly-boldBag"></i>
+                                                <i class="bi bi-house-add-fill"></i>
                                             </div>
                                         </div>
                                         <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                            <h6 class="text-muted font-semibold">Orders</h6>
-                                            <h6 class="font-extrabold mb-0">{{ $orderCount }}</h6>
+                                            <h6 class="text-muted font-semibold">Rumah</h6>
+                                            <h6 class="font-extrabold mb-0">{{ $rumahCount }}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -50,12 +50,12 @@
                                         <div
                                             class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                                             <div class="stats-icon blue mb-2">
-                                                <i class="iconly-boldCalendar"></i>
+                                                <i class="bi bi-currency-dollar"></i>
                                             </div>
                                         </div>
                                         <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                            <h6 class="text-muted font-semibold">Booking</h6>
-                                            <h6 class="font-extrabold mb-0">{{ $bookingCount }}</h6>
+                                            <h6 class="text-muted font-semibold">Pembayaran</h6>
+                                            <h6 class="font-extrabold mb-0">{{ $pembayaranCount }}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -68,12 +68,12 @@
                                         <div
                                             class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
                                             <div class="stats-icon green mb-2">
-                                                <i class="iconly-boldAdd-User"></i>
+                                                <i class="bi bi-wallet"></i>
                                             </div>
                                         </div>
                                         <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                            <h6 class="text-muted font-semibold">Customer</h6>
-                                            <h6 class="font-extrabold mb-0">{{ $userCount }}</h6>
+                                            <h6 class="text-muted font-semibold">Pengeluaran</h6>
+                                            <h6 class="font-extrabold mb-0">{{ $pengeluaranCount }}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -152,6 +152,6 @@
                     </div>
                 </div>
             </section>
-        </div> --}}
+        </div>
     </div>
 </div>

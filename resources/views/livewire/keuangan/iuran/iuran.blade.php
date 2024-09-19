@@ -23,7 +23,7 @@
                                 <th>No.</th>
                                 <th>Jenis Iuran</th>
                                 <th>Nominal <sub>/Bulan</sub></th>
-                                <th>Opsi</th>
+                                {{-- <th>Opsi</th> --}}
                             </tr>
                         </thead>
                         <tbody>
@@ -32,12 +32,12 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->jenis_iuran }}</td>
                                     <td>{{ 'Rp. ' . number_format($item->nominal, 0, '.', '.') }}</td>
-                                    <td>
+                                    {{-- <td>
                                         <a wire:click="show_edit_form({{ $item->id }})"
                                             class="btn btn-warning text-center">
                                             <i class="bi bi-pencil-square"></i>
                                         </a>
-                                    </td>
+                                    </td> --}}
                                 </tr>
                             @endforeach
                         </tbody>
