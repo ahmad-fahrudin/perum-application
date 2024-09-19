@@ -1,7 +1,7 @@
 # <p align="center">Dibuat Menggunakan Framework Laravel Versi 11 dan Php versi 8.2.</p>
 
-# ERD (Entity Relationship Diagram)
-![Screenshot 2024-09-19 200406](https://github.com/user-attachments/assets/4b706c66-046f-447f-8ce5-38c1640a6bde)
+## ERD (Entity Relationship Diagram) paling bawah 👇 👇 👇
+
 
 ## Panduan Install
 ### Jangan lupa run XAMPP atau Laragonnya
@@ -78,4 +78,8 @@ php artisan serve
 <p>Infomasi didalam table, lalu ada Form buat Edit Data User bisa juga ubah password disini</p>
 
 ![Screenshot 2024-09-19 215104](https://github.com/user-attachments/assets/cda4339a-cc48-434b-a397-09efc2689c1e)
+
+
+# ERD (Entity Relationship Diagram)
+![Screenshot 2024-09-19 200406](https://github.com/user-attachments/assets/4b706c66-046f-447f-8ce5-38c1640a6bde)
 
