@@ -45,6 +45,7 @@ php artisan serve
 
 ## Preview
 1. **Fitur Dashboard**
+<p>Informasi jumlah Penghuni, Rumah, Pembayaran, dan Pengeluaran. lalu ada informasi User yang login, sistem yang kita gunakan dan ada Grafik Diagram</p>
 ![Screenshot 2024-09-19 214633](https://github.com/user-attachments/assets/63b4fbab-c549-4f9b-8d79-6eecd491c103)
 
 2. **Fitur Majanemen Penghuni**
