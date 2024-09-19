@@ -47,32 +47,37 @@
                         <li class="sidebar-title">Menu</li>
                         <li class="sidebar-item {{ Route::is('dashboard') ? 'active' : '' }}">
                             <a href="{{ route('dashboard') }}" class='sidebar-link'>
-                                <i class="bi bi-bar-chart-fill"></i>
+                                <i class="bi bi-speedometer2"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
                         <li class="sidebar-item {{ Route::is('penghuni') ? 'active' : '' }}">
                             <a href="{{ route('penghuni') }}" class='sidebar-link'>
-                                <i class="bi bi-grid-1x2-fill"></i>
+                                <i class="bi bi-people-fill"></i>
                                 <span>Penghuni</span>
                             </a>
                         </li>
-                        <li class="sidebar-item {{ Route::is('rumah') ? 'active' : '' }}">
-                            <a href="{{ route('rumah') }}" class='sidebar-link'>
-                                <i class="bi bi-grid-1x2-fill"></i>
+                        <li class="sidebar-item {{ Route::is('rumah', 'iuran') ? 'active' : '' }} has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-house-add-fill"></i>
                                 <span>Rumah</span>
                             </a>
+                            <ul class="submenu submenu-closed" style="--submenu-height: 86px;">
+                                <li class="submenu-item {{ Route::is('rumah') ? 'active' : '' }}">
+                                    <a href="{{ route('rumah') }}" class="submenu-link">Data Rumah</a>
+                                </li>
+                                <li class="submenu-item {{ Route::is('iuran') ? 'active' : '' }}">
+                                    <a href="{{ route('iuran') }}" class="submenu-link">Iuran</a>
+                                </li>
+                            </ul>
                         </li>
                         <li
                             class="sidebar-item {{ Route::is('iuran', 'pembayaran', 'pendapatan', 'pengeluaran') ? 'active' : '' }}  has-sub">
                             <a href="#" class="sidebar-link">
-                                <i class="bi bi-map-fill"></i>
+                                <i class="bi bi-bank"></i>
                                 <span>Keuangan</span>
                             </a>
                             <ul class="submenu submenu-closed" style="--submenu-height: 86px;">
-                                <li class="submenu-item {{ Route::is('iuran') ? 'active' : '' }}">
-                                    <a href="{{ route('iuran') }}" class="submenu-link">Iuran</a>
-                                </li>
                                 <li class="submenu-item {{ Route::is('pembayaran') ? 'active' : '' }}">
                                     <a href="{{ route('pembayaran') }}" class="submenu-link">Pembayaran</a>
                                 </li>
@@ -84,9 +89,15 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="sidebar-item {{ Route::is('ringkasan') ? 'active' : '' }}">
+                            <a href="{{ route('ringkasan') }}" class='sidebar-link'>
+                                <i class="bi bi-journal-bookmark-fill"></i>
+                                <span>Ringkasan</span>
+                            </a>
+                        </li>
                         <li class="sidebar-item {{ Route::is('data.user') ? 'active' : '' }}">
                             <a href="{{ route('data.user') }}" class='sidebar-link'>
-                                <i class="bi bi-grid-1x2-fill"></i>
+                                <i class="bi bi-person-fill-gear"></i>
                                 <span>Data User</span>
                             </a>
                         </li>

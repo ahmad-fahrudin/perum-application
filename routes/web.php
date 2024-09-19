@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\Keuangan\Iuran\Iuran;
 use App\Livewire\Keuangan\Pembayaran\Pembayaran;
 use App\Livewire\Pendapatan\Pengeluaran;
+use App\Livewire\Ringkasan\Ringkasan;
 
 Route::get('/login', Login::class)->name('login');
 Route::get('/register', Register::class)->name('register');
@@ -23,6 +24,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/pembayaran', Pembayaran::class)->name('pembayaran');
     Route::get('/pendapatan', Pendapatan::class)->name('pendapatan');
     Route::get('/pengeluaran', Pengeluaran::class)->name('pengeluaran');
+    Route::get('/ringkasan', Ringkasan::class)->name('ringkasan');
 
     Route::get('/data-user', Data::class)->name('data.user');
 });

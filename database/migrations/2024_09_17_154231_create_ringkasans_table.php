@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('ringkasans', function (Blueprint $table) {
             $table->id();
-            $table->string('bulan_tahun', 7);  // Format: YYYY-MM
+            $table->string('bulan_tahun');
             $table->decimal('total_pemasukan', 10, 2);
             $table->decimal('total_pengeluaran', 10, 2);
             $table->decimal('saldo', 10, 2);

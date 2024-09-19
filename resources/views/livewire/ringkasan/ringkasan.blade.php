@@ -1,6 +1,6 @@
 <div>
     <div class="page-heading">
-        <h3>Data User</h3>
+        <h3>Ringkasan</h3>
     </div>
     <section class="section">
         <div class="card">
@@ -11,25 +11,30 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
+            <div class="card-header">
+                <a wire:click="show_create_form" class="btn btn-primary">Tambah Ringkasan</a>
+            </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-hover table-striped" id="table1">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama</th>
-                                <th>Email</th>
-                                <th>Ditambahkan</th>
-                                <th>Opsi</th>
+                                <th>Bulan Tahun</th>
+                                <th>Total Pemasukan</th>
+                                <th>Total Pengeluaran</th>
+                                <th>Saldo</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $item)
+                            @foreach ($ringkasan as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->email }}</td>
-                                    <td>{{ $item->created_at->diffForHumans() }}</td>
+                                    <td>{{ $item->bulan_tahun }}</td>
+                                    <td>{{ 'Rp. ' . number_format($item->total_pemasukan, 0, '.', '.') }}</td>
+                                    <td>{{ 'Rp. ' . number_format($item->total_pengeluaran, 0, '.', '.') }}</td>
+                                    <td>{{ 'Rp. ' . number_format($item->saldo, 0, '.', '.') }}</td>
                                     <td>
                                         <a wire:click="show_edit_form({{ $item->id }})"
                                             class="btn btn-warning text-center">
