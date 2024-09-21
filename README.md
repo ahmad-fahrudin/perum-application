@@ -11,6 +11,7 @@
 git clone https://github.com/ahmad-fahrudin/perum-application.git
 cd perum-application
 composer install
+npm install & npm run dev
 cp .env.example .env
 ```
 
